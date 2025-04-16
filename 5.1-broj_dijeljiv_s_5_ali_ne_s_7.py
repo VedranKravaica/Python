@@ -1,7 +1,7 @@
 def provjera(M, N):
     if M>2 and N>M+99:
         return True
-    elif M<2 and N<M+99:
+    elif M<2 and N<=M+99:
         print('Učitani brojevi ne ispunjavaju uvjete!')
         M=int(input('Unesite prvi broj: '))
         N=int(input('Unesite drugi broj: '))
@@ -16,7 +16,9 @@ def ispis(M, N):
 def main():
     M=int(input('Unesite prvi broj: '))
     N=int(input('Unesite drugi broj: '))
-    provjera(M, N)
+    while not provjera(M, N):
+        M=int(input('Unesite prvi broj: '))
+        N=int(input('Unesite drugi broj: '))
     ispis(M, N)
 
 if __name__ == '__main__':
